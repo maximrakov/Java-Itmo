@@ -1,8 +1,7 @@
-package BanksStuff;
+package banksStuff;
 
 public class DebitAccountFactory implements IAccountFactory{
-    public Account CreateAccount()
-    {
+    public Account createAccount() {
         return new DebitAccount();
     }
 }

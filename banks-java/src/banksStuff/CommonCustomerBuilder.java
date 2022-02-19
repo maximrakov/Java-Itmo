@@ -1,4 +1,4 @@
-package BanksStuff;
+package banksStuff;
 
 public class CommonCustomerBuilder extends CustomerBuilder{
     public CommonCustomerBuilder(Customer customer)
@@ -6,28 +6,23 @@ public class CommonCustomerBuilder extends CustomerBuilder{
         Customer = customer;
     }
 
-    public void BuildAddress(String adress)
-    {
+    public void buildAddress(String adress) {
         Customer.setAddress(adress);
     }
 
-    public void BuildName(String name)
-    {
+    public void buildName(String name) {
         Customer.setName(name);
     }
 
-    public void BuildNotice(boolean notice)
-    {
+    public void buildNotice(boolean notice) {
         Customer.setNotice(notice);
     }
 
-    public void BuildPassportData(String passportData)
-    {
+    public void buildPassportData(String passportData) {
         Customer.setPassportData(passportData);
     }
 
-    public void BuildSurname(String surname)
-    {
+    public void buildSurname(String surname) {
         Customer.setSurname(surname);
     }
 }

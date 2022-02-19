@@ -1,27 +1,24 @@
-package BanksStuff;
+package banksStuff;
 
 public class CustomerCreator {
     public CommonCustomerBuilder CommonCustomerBuilder;
     public CustomerDirector CustomerDirector;
 
-    public ICustomer Creator(String name, String surname)
-    {
+    public ICustomer creator(String name, String surname) {
         CommonCustomerBuilder = new CommonCustomerBuilder(new Customer());
         CustomerDirector = new CustomerDirector();
         CustomerDirector.CustomerBuilder = CommonCustomerBuilder;
-        return CustomerDirector.BuildCustomer(name, surname);
+        return CustomerDirector.buildCustomer(name, surname);
     }
 
-    public ICustomer Creator(String name, String surname, String passwordData, String adress)
-    {
+    public ICustomer creator(String name, String surname, String passwordData, String adress) {
         CommonCustomerBuilder = new CommonCustomerBuilder(new Customer());
         CustomerDirector = new CustomerDirector();
         CustomerDirector.CustomerBuilder = CommonCustomerBuilder;
-        return CustomerDirector.BuildCustomer(name, surname, passwordData, adress);
+        return CustomerDirector.buildCustomer(name, surname, passwordData, adress);
     }
 
-    public PremiumCustomer ImproveAccount(ICustomer customer, String passwordData, String adress)
-    {
+    public PremiumCustomer improveAccount(ICustomer customer, String passwordData, String adress) {
         PremiumCustomer premium = new PremiumCustomer(customer, passwordData, adress);
         return premium;
     }

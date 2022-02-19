@@ -1,4 +1,4 @@
-package BanksStuff;
+package banksStuff;
 
 import exceptions.LimitIsExceeded;
 
@@ -10,19 +10,20 @@ public class Customer implements ICustomer {
     private String Surname;
     private String Address;
     private String PassportData;
+
     private boolean Notice;
+
     private List<Account> Accounts;
     private List<String> Messages;
+
     private int Limit;
-    public Customer()
-    {
+    public Customer() {
         Accounts = new ArrayList<Account>();
         Messages = new ArrayList<String>();
         Limit = 500;
     }
 
-    public Customer(String name, String surname, String address, String passwordData)
-    {
+    public Customer(String name, String surname, String address, String passwordData) {
         Name = name;
         Surname = surname;
         Address = address;
@@ -33,96 +34,80 @@ public class Customer implements ICustomer {
         Limit = 500;
     }
 
-    public void MakeTransfer(int accountId, int accountToId, int amount) throws LimitIsExceeded {
-        if(amount > Limit){
+    public void makeTransfer(int accountId, int accountToId, int amount) throws LimitIsExceeded {
+        if(amount > Limit) {
             throw new LimitIsExceeded("Limit is exceeded");
         }
-        for (Account account : Accounts)
-        {
-            if (account.AccountId == accountId)
-            {
-                account.MakeTransfer(accountToId, amount);
+        for (Account account : Accounts) {
+            if (account.accountId == accountId) {
+                account.makeTransfer(accountToId, amount);
             }
         }
     }
 
-    public List<Integer> GetUserAccounts()
-    {
+    public List<Integer> getUserAccounts() {
         var vs = new ArrayList<Integer>();
-        for (Account account : Accounts)
-        {
-            vs.add(account.AccountId);
+        for (Account account : Accounts) {
+            vs.add(account.accountId);
         }
 
         return vs;
     }
 
-    public List<Integer> GetUserMoney()
-    {
+    public List<Integer> getUserMoney() {
         var vs = new ArrayList<Integer>();
-        for (Account account : Accounts)
-        {
-            vs.add(account.Money);
+        for (Account account : Accounts) {
+            vs.add(account.money);
         }
 
         return vs;
     }
 
-    public void AddMoreInformation(String address, String passport)
-    {
+    public void addMoreInformation(String address, String passport) {
         Address = address;
         PassportData = passport;
     }
 
-    public void AddAccount(Account account)
-    {
+    public void addAccount(Account account) {
         Accounts.add(account);
     }
 
-    public void CancelTransfer(int accountId, int accountToId, int amount)
-    {
-        for(Account account : Accounts)
-        {
-            if (account.AccountId == accountId)
-            {
-                account.CancelTransfer(accountToId, amount);
+    public void cancelTransfer(int accountId, int accountToId, int amount) {
+        for(Account account : Accounts) {
+            if (account.accountId == accountId) {
+                account.cancelTransfer(accountToId, amount);
             }
         }
     }
 
-    public void AddMoney(int accountId, int amount)
-    {
-        for(Account account : Accounts)
-        {
-            if (account.AccountId == accountId)
-            {
-                account.AddMoney(amount);
+    public void addMoney(int accountId, int amount) {
+        for(Account account : Accounts) {
+            if (account.accountId == accountId) {
+                account.addMoney(amount);
             }
         }
     }
 
-    public void TakeMoney(int accountId, int amount)
-    {
-        for (Account account : Accounts)
-        {
-            if (account.AccountId == accountId)
-            {
-                account.TakeMoney(amount);
+    public void takeMoney(int accountId, int amount) {
+        for (Account account : Accounts) {
+            if (account.accountId == accountId) {
+                account.takeMoney(amount);
             }
         }
     }
 
-    public List<Account> getAccounts()
-    {
+    @Override
+    public boolean hasThisType(String type) {
+        return false;
+    }
+
+    public List<Account> getAccounts() {
         return Accounts;
     }
 
-    public boolean HasThisType(String type)
-    {
-        for(Account account : Accounts)
-        {
-            if (account.Type == type)
-            {
+    public boolean hasThisType(AccountTypes type) {
+        for(Account account : Accounts) {
+            if (account.type == type) {
                 return true;
             }
         }
@@ -130,28 +115,23 @@ public class Customer implements ICustomer {
         return false;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return Name;
     }
 
-    public boolean getNotice()
-    {
+    public boolean getNotice() {
         return Notice;
     }
 
-    public List<String> getMessages()
-    {
+    public List<String> getMessages() {
         return Messages;
     }
 
-    public void setPassword(String password)
-    {
+    public void setPassword(String password) {
         PassportData = password;
     }
 
-    public void setAdress(String adress)
-    {
+    public void setAdress(String adress) {
         Address = adress;
     }
 

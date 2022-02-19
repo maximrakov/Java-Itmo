@@ -1,36 +1,39 @@
-package Banks;
+package banks;
 
-import BanksStuff.*;
-import ObjectStuff.MoneyTransfer;
+import banksStuff.*;
+import objectStuff.MoneyTransfer;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static banksStuff.AccountTypes.*;
+
 public class Bank {
-    private List<Account> accounts;
-    private List<ICustomer> customers;
-    private List<MoneyTransfer> moneyTransfers;
-    public int Limit;
+    private final List<Account> accounts;
+    private final List<ICustomer> customers;
+    private final List<MoneyTransfer> moneyTransfers;
+
+    public int limit;
     public Bank()
     {
         accounts = new ArrayList<Account>();
         customers = new ArrayList<ICustomer>();
         moneyTransfers = new ArrayList<MoneyTransfer>();
-        Limit = 1000;
+        limit = 1000;
     }
 
-    public Account CreateAccount(String typeOfAcc)
+    public Account createAccount(String typeOfAcc)
     {
-        Account newAcc = AccountFactory(typeOfAcc).CreateAccount();
+        Account newAcc = accountFactory(typeOfAcc).createAccount();
         accounts.add(newAcc);
         return newAcc;
     }
 
-    public void ChangeCreditPenalty(int penalty)
+    public void changeCreditPenalty(int penalty)
     {
         for(Account account : accounts)
         {
-            if (account.getType() == "credit")
+            if (account.getType() == credit)
             {
                 account.setPenalty(penalty);
 //                account.Penalty = penalty;
@@ -39,7 +42,7 @@ public class Bank {
 
         for(ICustomer customer : customers)
         {
-            if (customer.HasThisType("credit"))
+            if (customer.hasThisType("credit"))
             {
                 customer.setNotice(true);
 //                customer.Notice = true;
@@ -49,11 +52,11 @@ public class Bank {
         }
     }
 
-    public void ChangeDebitProcent(int procent)
+    public void changeDebitProcent(int procent)
     {
         for (Account account : accounts)
         {
-            if (account.getType() == "debit")
+            if (account.getType() == debit)
             {
                 account.setProcent(procent);
             }
@@ -61,7 +64,7 @@ public class Bank {
 
         for(ICustomer customer : customers)
         {
-            if (customer.HasThisType("debit"))
+            if (customer.hasThisType("debit"))
             {
                 customer.setNotice(true);
                 customer.getMessages().add("Procent of your debit card has been changed");
@@ -69,11 +72,11 @@ public class Bank {
         }
     }
 
-    public void ChangeDepositProcent(int lowProcent, int mediumProcent, int highProcent)
+    public void changeDepositProcent(int lowProcent, int mediumProcent, int highProcent)
     {
         for(Account account : accounts)
         {
-            if (account.getType() == "deposit")
+            if (account.getType() == deposit)
             {
                 account.setLowProcent(lowProcent);
                 account.setMediumProcent(mediumProcent);
@@ -84,7 +87,7 @@ public class Bank {
 
         for (ICustomer customer : customers)
         {
-            if (customer.HasThisType("deposit"))
+            if (customer.hasThisType("deposit"))
             {
                 customer.setNotice(true);
                 customer.getMessages().add("Procent of your deposit card has been changed");
@@ -93,7 +96,7 @@ public class Bank {
         }
     }
 
-    public void MoneyTransfer(int submitterAccountId, int recipientAccountId, int amount)
+    public void moneyTransfer(int submitterAccountId, int recipientAccountId, int amount)
     {
         Account submitterAccount = null;
         Account recipientAccount = null;
@@ -120,28 +123,28 @@ public class Bank {
         moneyTransfers.add(new MoneyTransfer(submitterAccount, recipientAccount, amount));
     }
 
-    public void GetComission()
+    public void getComission()
     {
         for (Account account : accounts)
         {
-            account.FixProfit();
+            account.fixProfit();
         }
     }
 
-    public void FixDailySpend()
+    public void fixDailySpend()
     {
         for (Account account : accounts)
         {
-            account.AddDought();
+            account.addDought();
         }
     }
 
-    public void AddCustomer(ICustomer customer)
+    public void addCustomer(ICustomer customer)
     {
         customers.add(customer);
     }
 
-    public boolean HasAccount(int accountId)
+    public boolean hasAccount(int accountId)
     {
         for (Account account : accounts)
         {
@@ -154,7 +157,7 @@ public class Bank {
         return false;
     }
 
-    public void CancelTransfer(int submitterAccountId, int recipientAccountId, int amount)
+    public void cancelTransfer(int submitterAccountId, int recipientAccountId, int amount)
     {
         for (MoneyTransfer moneyTransfer : moneyTransfers)
         {
@@ -166,7 +169,7 @@ public class Bank {
         }
     }
 
-    public void AddMoneyToAcc(int accountId, int money)
+    public void addMoneyToAcc(int accountId, int money)
     {
         for (Account account : accounts)
         {
@@ -177,7 +180,7 @@ public class Bank {
         }
     }
 
-    private IAccountFactory AccountFactory(String typeOfAcc)
+    private IAccountFactory accountFactory(String typeOfAcc)
     {
         if (typeOfAcc.equals("debit"))
         {

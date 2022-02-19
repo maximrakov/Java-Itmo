@@ -1,27 +1,27 @@
-package BanksStuff;
+package banksStuff;
 
 import exceptions.LimitIsExceeded;
 
 import java.util.List;
 
 public interface ICustomer {
-    public void MakeTransfer(int accountId, int accountToId, int amount) throws LimitIsExceeded;
+    public void makeTransfer(int accountId, int accountToId, int amount) throws LimitIsExceeded;
 
-    public List<Integer> GetUserAccounts();
+    public List<Integer> getUserAccounts();
 
-    public List<Integer> GetUserMoney();
+    public List<Integer> getUserMoney();
 
-    public void AddMoreInformation(String address, String passport);
+    public void addMoreInformation(String address, String passport);
 
-    public void AddAccount(Account account);
+    public void addAccount(Account account);
 
-    public void CancelTransfer(int accountId, int accountToId, int amount);
+    public void cancelTransfer(int accountId, int accountToId, int amount);
 
-    public void AddMoney(int accountId, int amount);
+    public void addMoney(int accountId, int amount);
 
-    public void TakeMoney(int accountId, int amount);
+    public void takeMoney(int accountId, int amount);
 
-    public boolean HasThisType(String type);
+    public boolean hasThisType(String type);
 
 //    public List<Account> GetAccounts();
 

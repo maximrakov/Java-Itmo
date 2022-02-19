@@ -1,14 +1,13 @@
-package ObjectStuff;
+package objectStuff;
 
-import BanksStuff.Account;
+import banksStuff.Account;
 
 public class MoneyTransfer
 {
     private Account SubmitterAccount;
     private Account RecipientAccount;
     private int Amount;
-    public MoneyTransfer(Account submitter, Account recipient, int amount)
-    {
+    public MoneyTransfer(Account submitter, Account recipient, int amount) {
         SubmitterAccount = submitter;
         RecipientAccount = recipient;
         Amount = amount;
