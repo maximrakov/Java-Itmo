@@ -801,10 +801,10 @@ false Zulu
     <database id="5" parent="1" name="javacats">
       <ObjectId>26780</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>5843</IntrospectionStateNumber>
+      <IntrospectionStateNumber>5893</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|26983|26985|1
-sequence|table|26991|26993|1
+      <Relations>sequence|table|27073|27075|1
+sequence|table|27081|27083|1
 </Relations>
     </database>
     <database id="6" parent="1" name="kek">
@@ -904,7 +904,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>5844</IntrospectionStateNumber>
+      <IntrospectionStateNumber>5894</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="27" parent="5" name="plpgsql">
@@ -1005,72 +1005,72 @@ UC/10
       <Type>index</Type>
     </access-method>
     <sequence id="39" parent="26" name="cat_cat_id_seq">
-      <ObjectId>26983</ObjectId>
+      <ObjectId>27073</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>5836</StateNumber>
+      <StateNumber>5886</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <sequence id="40" parent="26" name="owner_owner_id_seq">
-      <ObjectId>26991</ObjectId>
+      <ObjectId>27081</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>5838</StateNumber>
+      <StateNumber>5888</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <table id="41" parent="26" name="cat">
-      <ObjectId>26985</ObjectId>
+      <ObjectId>27075</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>5836</StateNumber>
+      <StateNumber>5886</StateNumber>
     </table>
     <table id="42" parent="26" name="friends">
-      <ObjectId>26999</ObjectId>
+      <ObjectId>27089</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>5840</StateNumber>
+      <StateNumber>5890</StateNumber>
     </table>
     <table id="43" parent="26" name="owner">
-      <ObjectId>26993</ObjectId>
+      <ObjectId>27083</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>5838</StateNumber>
+      <StateNumber>5888</StateNumber>
     </table>
     <table id="44" parent="26" name="owner_cat">
-      <ObjectId>27002</ObjectId>
+      <ObjectId>27092</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>5842</StateNumber>
+      <StateNumber>5892</StateNumber>
     </table>
     <column id="45" parent="41" name="cat_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>5836</StateNumber>
+      <StateNumber>5886</StateNumber>
       <DefaultExpression>nextval(&apos;cat_cat_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="46" parent="41" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
-      <StateNumber>5836</StateNumber>
+      <StateNumber>5886</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="47" parent="41" name="date_of_birth">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>5836</StateNumber>
+      <StateNumber>5886</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="48" parent="41" name="type">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
-      <StateNumber>5836</StateNumber>
+      <StateNumber>5886</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="49" parent="41" name="owner_id">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>5836</StateNumber>
+      <StateNumber>5886</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="50" parent="41" name="cat_pkey">
-      <ObjectId>26989</ObjectId>
-      <StateNumber>5836</StateNumber>
+      <ObjectId>27079</ObjectId>
+      <StateNumber>5886</StateNumber>
       <ColNames>cat_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1079,8 +1079,8 @@ UC/10
       <ClassIds>1978</ClassIds>
     </index>
     <key id="51" parent="41" name="cat_pkey">
-      <ObjectId>26990</ObjectId>
-      <StateNumber>5836</StateNumber>
+      <ObjectId>27080</ObjectId>
+      <StateNumber>5886</StateNumber>
       <ColNames>cat_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>cat_pkey</UnderlyingIndexName>
@@ -1088,38 +1088,38 @@ UC/10
     <column id="52" parent="42" name="first_friend_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>5840</StateNumber>
+      <StateNumber>5890</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="53" parent="42" name="second_friend_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>5840</StateNumber>
+      <StateNumber>5890</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="54" parent="43" name="owner_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>5838</StateNumber>
+      <StateNumber>5888</StateNumber>
       <DefaultExpression>nextval(&apos;owner_owner_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="55" parent="43" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
-      <StateNumber>5838</StateNumber>
+      <StateNumber>5888</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="56" parent="43" name="date_of_birth">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>5838</StateNumber>
+      <StateNumber>5888</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <index id="57" parent="43" name="owner_pkey">
-      <ObjectId>26997</ObjectId>
-      <StateNumber>5838</StateNumber>
+      <ObjectId>27087</ObjectId>
+      <StateNumber>5888</StateNumber>
       <ColNames>owner_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1128,8 +1128,8 @@ UC/10
       <ClassIds>1978</ClassIds>
     </index>
     <key id="58" parent="43" name="owner_pkey">
-      <ObjectId>26998</ObjectId>
-      <StateNumber>5838</StateNumber>
+      <ObjectId>27088</ObjectId>
+      <StateNumber>5888</StateNumber>
       <ColNames>owner_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>owner_pkey</UnderlyingIndexName>
@@ -1137,13 +1137,13 @@ UC/10
     <column id="59" parent="44" name="owner_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>5842</StateNumber>
+      <StateNumber>5892</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="60" parent="44" name="cat_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>5842</StateNumber>
+      <StateNumber>5892</StateNumber>
       <TypeId>23</TypeId>
     </column>
   </database-model>
