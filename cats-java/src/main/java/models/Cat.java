@@ -1,7 +1,10 @@
 package models;
 
+import enumerations.Color;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,9 +13,10 @@ public class Cat {
     private String name;
     private Timestamp dateOfBirth;
     private String type;
+    private Color color;
     private Integer ownerId;
 
-    private List<Cat> friends;
+    private List<Cat> friends = new ArrayList<>();
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(

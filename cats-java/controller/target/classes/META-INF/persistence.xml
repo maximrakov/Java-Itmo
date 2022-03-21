@@ -5,7 +5,7 @@
              version="2.2">
     <persistence-unit name="default">
 
-<!--        <class></class>-->
+        <!--        <class></class>-->
         <class>models.Cat</class>
         <class>models.Owner</class>
         <properties>

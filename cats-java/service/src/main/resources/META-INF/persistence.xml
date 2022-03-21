@@ -5,5 +5,15 @@
              version="2.2">
     <persistence-unit name="default">
 
+        <!--        <class></class>-->
+        <class>models.Cat</class>
+        <class>models.Owner</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/javacats"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.user" value="postgres"/>
+            <property name="hibernate.connection.password" value="pqqk9a9s"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
     </persistence-unit>
 </persistence>

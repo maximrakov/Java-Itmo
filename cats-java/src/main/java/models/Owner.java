@@ -2,6 +2,7 @@ package models;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,7 +12,7 @@ public class Owner {
     private Timestamp dateOfBirth;
 
 
-    private List<Cat> cats;
+    private List<Cat> cats = new ArrayList<>();
 
     @Id
     @Column(name = "owner_id")
