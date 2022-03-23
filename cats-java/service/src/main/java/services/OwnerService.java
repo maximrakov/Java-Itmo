@@ -14,18 +14,19 @@ public class OwnerService {
     private EntityManager entityManager;
 
     public OwnerService(EntityManager srcentityManager) {
-//        EntityManagerFactory sessionFactory = Persistence.createEntityManagerFactory("default");
-//        entityManager = sessionFactory.createEntityManager();
-//        entityManager.getTransaction().begin();
         entityManager = srcentityManager;
         ownerRepository = new OwnerRepositoryImpl(entityManager);
     }
 
+    public int getAmount() {
+        return ownerRepository.countOwners();
+    }
     public Owner getOwnerById(int id) {
         return ownerRepository.getOwnerById(id);
     }
 
     public Owner saveOwner(Owner owner) {
+        owner.setOwnerId(getAmount());
         return ownerRepository.saveOwner(owner);
     }
 

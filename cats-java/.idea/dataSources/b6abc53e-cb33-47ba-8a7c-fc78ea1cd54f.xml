@@ -347,7 +347,7 @@ false Asia/Srednekolymsk
 false Asia/Taipei
 false Asia/Tashkent
 false Asia/Tbilisi
-false Asia/Tehran
+true Asia/Tehran
 false Asia/Tel_Aviv
 false Asia/Thimbu
 false Asia/Thimphu
@@ -598,7 +598,7 @@ false Indian/Maldives
 false Indian/Mauritius
 false Indian/Mayotte
 false Indian/Reunion
-false Iran
+true Iran
 false Israel
 false JAYT
 false JST
@@ -801,10 +801,10 @@ false Zulu
     <database id="5" parent="1" name="javacats">
       <ObjectId>26780</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>6328</IntrospectionStateNumber>
+      <IntrospectionStateNumber>6506</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|35804|35806|1
-sequence|table|35812|35814|1
+      <Relations>sequence|table|36116|36118|1
+sequence|table|36124|36126|1
 </Relations>
     </database>
     <database id="6" parent="1" name="kek">
@@ -904,7 +904,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>6329</IntrospectionStateNumber>
+      <IntrospectionStateNumber>6507</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="27" parent="5" name="plpgsql">
@@ -1005,15 +1005,15 @@ UC/10
       <Type>index</Type>
     </access-method>
     <sequence id="39" parent="26" name="cat_cat_id_seq">
-      <ObjectId>35804</ObjectId>
+      <ObjectId>36116</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>6321</StateNumber>
+      <StateNumber>6499</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <sequence id="40" parent="26" name="owner_owner_id_seq">
-      <ObjectId>35812</ObjectId>
+      <ObjectId>36124</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>6323</StateNumber>
+      <StateNumber>6501</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
     <object-type id="41" parent="26" name="color_t">
@@ -1027,66 +1027,66 @@ blue</Labels>
       <SubCategory>enum</SubCategory>
     </object-type>
     <table id="42" parent="26" name="cat">
-      <ObjectId>35806</ObjectId>
+      <ObjectId>36118</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>6321</StateNumber>
+      <StateNumber>6499</StateNumber>
     </table>
     <table id="43" parent="26" name="friends">
-      <ObjectId>35820</ObjectId>
+      <ObjectId>36132</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>6325</StateNumber>
+      <StateNumber>6503</StateNumber>
     </table>
     <table id="44" parent="26" name="owner">
-      <ObjectId>35814</ObjectId>
+      <ObjectId>36126</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>6323</StateNumber>
+      <StateNumber>6501</StateNumber>
     </table>
     <table id="45" parent="26" name="owner_cat">
-      <ObjectId>35823</ObjectId>
+      <ObjectId>36135</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>6327</StateNumber>
+      <StateNumber>6505</StateNumber>
     </table>
     <column id="46" parent="42" name="cat_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>6321</StateNumber>
+      <StateNumber>6499</StateNumber>
       <DefaultExpression>nextval(&apos;cat_cat_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="47" parent="42" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
-      <StateNumber>6321</StateNumber>
+      <StateNumber>6499</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="48" parent="42" name="date_of_birth">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>6321</StateNumber>
+      <StateNumber>6499</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="49" parent="42" name="type">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
-      <StateNumber>6321</StateNumber>
+      <StateNumber>6499</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="50" parent="42" name="color">
       <Position>5</Position>
       <DataType>color_t|0s</DataType>
-      <StateNumber>6321</StateNumber>
+      <StateNumber>6499</StateNumber>
       <TypeId>35239</TypeId>
     </column>
     <column id="51" parent="42" name="owner_id">
       <Position>6</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>6321</StateNumber>
+      <StateNumber>6499</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="52" parent="42" name="cat_pkey">
-      <ObjectId>35810</ObjectId>
-      <StateNumber>6321</StateNumber>
+      <ObjectId>36122</ObjectId>
+      <StateNumber>6499</StateNumber>
       <ColNames>cat_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1095,8 +1095,8 @@ blue</Labels>
       <ClassIds>1978</ClassIds>
     </index>
     <key id="53" parent="42" name="cat_pkey">
-      <ObjectId>35811</ObjectId>
-      <StateNumber>6321</StateNumber>
+      <ObjectId>36123</ObjectId>
+      <StateNumber>6499</StateNumber>
       <ColNames>cat_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>cat_pkey</UnderlyingIndexName>
@@ -1104,38 +1104,38 @@ blue</Labels>
     <column id="54" parent="43" name="first_friend_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>6325</StateNumber>
+      <StateNumber>6503</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="55" parent="43" name="second_friend_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>6325</StateNumber>
+      <StateNumber>6503</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="56" parent="44" name="owner_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>6323</StateNumber>
+      <StateNumber>6501</StateNumber>
       <DefaultExpression>nextval(&apos;owner_owner_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="57" parent="44" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
-      <StateNumber>6323</StateNumber>
+      <StateNumber>6501</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="58" parent="44" name="date_of_birth">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>6323</StateNumber>
+      <StateNumber>6501</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <index id="59" parent="44" name="owner_pkey">
-      <ObjectId>35818</ObjectId>
-      <StateNumber>6323</StateNumber>
+      <ObjectId>36130</ObjectId>
+      <StateNumber>6501</StateNumber>
       <ColNames>owner_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1144,8 +1144,8 @@ blue</Labels>
       <ClassIds>1978</ClassIds>
     </index>
     <key id="60" parent="44" name="owner_pkey">
-      <ObjectId>35819</ObjectId>
-      <StateNumber>6323</StateNumber>
+      <ObjectId>36131</ObjectId>
+      <StateNumber>6501</StateNumber>
       <ColNames>owner_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>owner_pkey</UnderlyingIndexName>
@@ -1153,13 +1153,13 @@ blue</Labels>
     <column id="61" parent="45" name="owner_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>6327</StateNumber>
+      <StateNumber>6505</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="62" parent="45" name="cat_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>6327</StateNumber>
+      <StateNumber>6505</StateNumber>
       <TypeId>23</TypeId>
     </column>
   </database-model>

@@ -18,10 +18,9 @@ public class Main {
         ownerService.saveOwner(owner);
         Cat cat = new Cat();
         catService.save(cat);
-//        owner.getCats().add(cat);
+        owner.getCats().add(cat);
         ownerService.makeCat(owner, cat);
         Cat anotherCat = new Cat();
-        anotherCat.setCatId(2);
         catService.save(anotherCat);
         catService.makeFriendship(cat, anotherCat);
         entityManager.getTransaction().commit();

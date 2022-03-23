@@ -23,16 +23,17 @@ public class CatService {
         return catRepository.getCatById(id);
     }
 
+    public int getAmount() {
+        return catRepository.countCats();
+    }
     public Cat save(Cat cat) {
+        cat.setCatId(getAmount());
         Cat finallyCat = catRepository.saveCat(cat);
-        // entityManager.getTransaction().commit();
-//        entityManager.close();
-        return  finallyCat;
+        return finallyCat;
     }
 
     public void addFriend(Cat cat, Cat hisFriend){
         catRepository.addFriend(cat, hisFriend);
-//        entityManager.getTransaction().commit();
     }
 
     public void makeFriendship(Cat oneCat, Cat anotherCat) {

@@ -5,6 +5,8 @@ import models.Cat;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+import java.util.List;
 
 public class CatRepositoryImpl {
     private EntityManager em;
@@ -17,9 +19,17 @@ public class CatRepositoryImpl {
         return em.find(Cat.class, id);
     }
 
+    public Cat getCatByName(String name) {
+        return em.createQuery("select ct from Cat ct where ct.name = :name", Cat.class).setParameter("name", name).getSingleResult();
+    }
+
+    public int countCats() {
+        Query rs = em.createNativeQuery("SELECT count(*) FROM cat");
+        return Integer.parseInt(rs.getSingleResult().toString());
+    }
+
     public Cat saveCat(Cat cat) {
         em.persist(cat);
-
         return cat;
     }
 
